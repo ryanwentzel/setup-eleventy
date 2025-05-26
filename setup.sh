@@ -22,8 +22,8 @@ npm install -D rimraf npm-run-all
 
 # Configure npm scripts
 npm pkg set scripts.clean="npx rimraf ./dist"
-npm pkg set scripts.css:watch="npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/index.css --watch --verbose",
-npm pkg set scripts.css:build="NODE_ENV=production npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/index.css --verbose",
+npm pkg set scripts.css:watch="npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --watch --verbose",
+npm pkg set scripts.css:build="NODE_ENV=production npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --verbose",
 npm pkg set scripts.eleventy="npx @11ty/eleventy"
 npm pkg set scripts.eleventy:serve="npx @11ty/eleventy --serve"
 npm pkg set scripts.dev="npm run clean && npx npm-run-all -p css:watch eleventy:serve"
@@ -80,7 +80,7 @@ cat > src/_layouts/default.njk <<EOF
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title or "Document" }}</title>
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body class="min-h-screen bg-lime-500">
     {{ content | safe }}
