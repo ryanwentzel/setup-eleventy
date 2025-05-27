@@ -82,8 +82,13 @@ cat > src/_layouts/default.njk <<EOF
     <title>{{ title or "Document" }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-<body class="min-h-screen bg-lime-500">
-    {{ content | safe }}
+<body class="min-h-screen bg-lime-500 p-8 md:p-16">
+    <div class="md:container md:mx-auto bg-white p-8 md:p-16">
+        <h1 class="text-3xl">{{ title }}</h1>
+        <div class="mt-5">
+            {{ content | safe }}
+        </div>
+    </div>
 </body>
 </html>
 EOF
