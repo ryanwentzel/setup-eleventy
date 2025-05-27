@@ -103,4 +103,12 @@ cat > src/assets/css/styles.css <<EOF
 
 EOF
 
-echo "Eleventy project setup complete in $(pwd)"
+# Create gitignore
+echo ">> Creating .gitignore"
+cat > .gitignore <<EOF
+node_modules/
+dist/
+
+EOF
+
+echo ">> Eleventy project setup complete in $(pwd)"
