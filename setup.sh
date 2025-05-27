@@ -66,8 +66,9 @@ mkdir -p src
 cat > src/index.md <<EOF
 ---
 layout: default.njk
+title: Hello, Eleventy!
 ---
-# Hello Eleventy!
+Build something already.
 
 EOF
 
