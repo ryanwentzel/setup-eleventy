@@ -4,20 +4,20 @@
 set -e
 
 # Initialize npm and create default package.json
-echo "Initializing npm"
+echo ">> Initializing npm"
 npm init -y
 npm pkg set type="module"
 
 # Install tailwindcss + postcss
-echo "Installing tailwindcss + postcss and friends"
+echo ">> Installing tailwindcss + postcss and friends"
 npm install -D tailwindcss @tailwindcss/postcss postcss postcss-cli autoprefixer cssnano postcss-import
 
 # Install Eleventy
-echo "Installing @11ty/eleventy"
+echo ">> Installing @11ty/eleventy"
 npm install -D @11ty/eleventy
 
 # Install build tools
-echo "Installing build tools..."
+echo ">> Installing build tools..."
 npm install -D rimraf npm-run-all
 
 # Configure npm scripts
@@ -31,7 +31,7 @@ npm pkg set scripts.build="npx npm-run-all clean css:build eleventy"
 npm pkg delete scripts.test
 
 # Create a basic Eleventy config file
-echo "Creating eleventy.config.js"
+echo ">> Creating eleventy.config.js"
 cat > eleventy.config.js <<EOF
 export default async function(eleventyConfig) {
     eleventyConfig.setInputDirectory("src");
@@ -49,7 +49,7 @@ export const config = {
 EOF
 
 # Create postcss config
-echo "Creating postcss.config.mjs"
+echo ">> Creating postcss.config.mjs"
 cat > postcss.config.mjs <<EOF
 export default {  
     plugins: {
