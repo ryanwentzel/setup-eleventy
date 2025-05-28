@@ -22,11 +22,10 @@ npm install -D rimraf npm-run-all
 
 # Configure npm scripts
 npm pkg set scripts.clean="npx rimraf ./dist"
-npm pkg set scripts.css:watch="npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --watch --verbose",
-npm pkg set scripts.css:build="NODE_ENV=production npx postcss ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --verbose",
+npm pkg set scripts.css="npx postcss ./src/assets/css/*.css --dir ./dist/assets/css/"
 npm pkg set scripts.eleventy="npx @11ty/eleventy"
-npm pkg set scripts.dev="npm run clean && npx npm-run-all -p css:watch \"eleventy -- --serve\""
-npm pkg set scripts.build="npx npm-run-all clean css:build eleventy"
+npm pkg set scripts.start="npm run clean && npx npm-run-all -p 'css -- --watch --verbose' 'eleventy -- --serve --quiet'"
+npm pkg set scripts.production="NODE_ENV=production eleventy && NODE_ENV=production npm run css"
 npm pkg delete scripts.test
 
 # Create a basic Eleventy config file
