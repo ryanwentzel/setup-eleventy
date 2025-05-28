@@ -10,15 +10,15 @@ npm pkg set type="module"
 
 # Install tailwindcss + postcss
 echo ">> Installing tailwindcss + postcss and friends"
-npm install -D tailwindcss @tailwindcss/postcss postcss postcss-cli autoprefixer cssnano postcss-import
+npm install tailwindcss @tailwindcss/postcss postcss postcss-cli autoprefixer cssnano postcss-import
 
 # Install Eleventy
 echo ">> Installing @11ty/eleventy"
-npm install -D @11ty/eleventy
+npm install @11ty/eleventy
 
 # Install build tools
 echo ">> Installing build tools..."
-npm install -D rimraf npm-run-all
+npm install rimraf npm-run-all
 
 # Configure npm scripts
 npm pkg set scripts.clean="npx rimraf ./dist"
