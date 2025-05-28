@@ -10,7 +10,7 @@ npm pkg set type="module"
 
 # Install tailwindcss + postcss
 echo ">> Installing tailwindcss + postcss and friends"
-npm install tailwindcss @tailwindcss/postcss postcss postcss-cli autoprefixer cssnano postcss-import
+npm install tailwindcss @tailwindcss/postcss postcss postcss-cli autoprefixer cssnano postcss-import lightningcss
 
 # Install Eleventy
 echo ">> Installing @11ty/eleventy"
