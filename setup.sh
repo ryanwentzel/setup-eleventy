@@ -115,4 +115,4 @@ dist/
 
 EOF
 
-echo ">> Eleventy project setup complete in $(pwd)"
+echo ">> Eleventy project setup complete in $(pwd) 🚀"
